@@ -1,5 +1,6 @@
 //	Ask the compiler to include minimal header files for our program.
-#include "GameWindows.h";
+#include "GameWindows.h"
+#include <stdio.h>
 
 //	use int main if you want to have a console to print out message
 int main()
@@ -13,6 +14,7 @@ int main()
 	gWin->createWindow();
 	while (gWin->gameLoop())//it just works
 	{
+		printf("1");
 		//It just works
 	}
 	gWin->clearWindow();

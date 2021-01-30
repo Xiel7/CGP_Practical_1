@@ -104,8 +104,7 @@ bool GameWindows::gameLoop()
 		NOTE! There are several ways of writing the message loop.
 		You have to based on which kind of application your are writing.
 	*/
-	while (msg.message != WM_QUIT)
-	{
+	
 		/*
 			The if- version process one message per one iteration loop
 			The while- version will clear the message queue before dealing with your own code.
@@ -129,7 +128,7 @@ bool GameWindows::gameLoop()
 		/*
 			Write your code here...
 		*/
-	}
+	
 
-	return false;
+	return msg.message != WM_QUIT;
 }
