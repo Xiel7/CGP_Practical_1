@@ -82,7 +82,7 @@ void GameWindows::createWindow()
 
 	//	Some interesting function to try out.
 	//	ShowCursor(false);
-	
+
 }
 
 
@@ -104,31 +104,31 @@ bool GameWindows::gameLoop()
 		NOTE! There are several ways of writing the message loop.
 		You have to based on which kind of application your are writing.
 	*/
-	
-		/*
-			The if- version process one message per one iteration loop
-			The while- version will clear the message queue before dealing with your own code.
 
-			Another function is GetMessage.
-			This function is not suitable for game, because it will block your program until it recieves a message.
-			your code will only executed when you have messages, otherwies your pogram will be waiting... (similar to cin)
-			Suitable for event based program, such as bussiness app.
-		*/
-		//	if (PeekMessage(&msg, NULL, 0, 0, PM_REMOVE))
-		while (PeekMessage(&msg, NULL, 0, 0, PM_REMOVE))
-		{
-			//	Receive a quit message
-			if (msg.message == WM_QUIT) break;
-			//	Translate the message 
-			TranslateMessage(&msg);
-			//	Send message to your window procedure
-			DispatchMessage(&msg);
-		}
+	/*
+		The if- version process one message per one iteration loop
+		The while- version will clear the message queue before dealing with your own code.
 
-		/*
-			Write your code here...
-		*/
-	
+		Another function is GetMessage.
+		This function is not suitable for game, because it will block your program until it recieves a message.
+		your code will only executed when you have messages, otherwies your pogram will be waiting... (similar to cin)
+		Suitable for event based program, such as bussiness app.
+	*/
+	//	if (PeekMessage(&msg, NULL, 0, 0, PM_REMOVE))
+	while (PeekMessage(&msg, NULL, 0, 0, PM_REMOVE))
+	{
+		//	Receive a quit message
+		if (msg.message == WM_QUIT) break;
+		//	Translate the message 
+		TranslateMessage(&msg);
+		//	Send message to your window procedure
+		DispatchMessage(&msg);
+	}
+
+	/*
+		Write your code here...
+	*/
+
 
 	return msg.message != WM_QUIT;
 }
